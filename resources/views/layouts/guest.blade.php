@@ -7,12 +7,23 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <style>
+            @font-face {
+                font-family: "Yellowtail";
+                src: url("{{ asset("assets/Yellowtail-Regular.ttf") }}")
+                font-display: swap;
+            }
+        </style>
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
         @include('layouts.navguest')
-        <main class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        <main>
             {{ $slot }}
         </main>
         @include('layouts.footer')
