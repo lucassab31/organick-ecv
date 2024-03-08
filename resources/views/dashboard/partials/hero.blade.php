@@ -10,7 +10,7 @@
             </p>
         </header>
     
-        <form method="post" action="{{ route('admin.content.hero.save') }}" class="mt-6 space-y-6">
+        <form method="post" action="{{ route('admin.content.hero.save') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
             @csrf
     
             <div>
@@ -31,6 +31,12 @@
                 <x-input-error class="mt-2" :messages="$errors->get('button')" />
             </div>
     
+            <div>
+                <x-input-label for="image" value="Image" />
+                <x-file-input id="image" name="image" class="mt-1 block w-full" required autofocus />
+                <x-input-error class="mt-2" :messages="$errors->get('image')" />
+            </div>
+    
             <div class="flex items-center gap-4">
                 <x-primary-button>Enregistrer</x-primary-button>
                 {{-- save redirected with success --}}
@@ -44,5 +50,9 @@
         <h4>{{ (isset($content->hero->subtitle) ? $content->hero->subtitle : '--') }}</h4>
         <h1>{{ (isset($content->hero->title) ? $content->hero->title : '--') }}</h1>
         <p>{{ (isset($content->hero->button) ? $content->hero->button : '--') }}</p>
+        <picture>
+            <source srcset="{{ (isset($content->hero->image) ? asset('storage/images/webp/' . pathinfo($content->hero->image, PATHINFO_FILENAME) . '.webp') : '') }}" type="image/webp">
+            <img src="{{ (isset($content->hero->image) ? asset('storage/images/original/' . $content->hero->image) : '') }}" alt="hero banner" class="w-full h-auto" />
+        </picture>
     </div>
 </section>
