@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
+            $table->string('page')->default('home');
             $table->string('section');
             $table->string('key');
             $table->text('value');
