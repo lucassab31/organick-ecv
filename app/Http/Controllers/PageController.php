@@ -13,6 +13,9 @@ class PageController extends Controller
         // make an object oContentPage : section => key => value
         $oContentPage = new \stdClass();
         foreach ($oContent as $content) {
+            if (!isset($oContentPage->{$content->section})) {
+                $oContentPage->{$content->section} = new \stdClass();
+            }
             $oContentPage->{$content->section}->{$content->key} = $content->value;
         }
 
