@@ -16,6 +16,6 @@ class PageController extends Controller
             $oContentPage->{$content->section}->{$content->key} = $content->value;
         }
 
-        return view('home', ['content' => $oContentPage]);
+        return view('home', ['content']);
     }
 }
