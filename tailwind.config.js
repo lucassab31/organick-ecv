@@ -82,7 +82,13 @@ export default {
                         lineHeight: "1.65em",
                     },
                 ],
-                btn: ["20px"],
+                btn: [
+                    "20px",
+                    {
+                        lineHeight: "1.2em",
+                        fontWeight: "700",
+                    },
+                ],
             },
         },
     },

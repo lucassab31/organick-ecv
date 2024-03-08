@@ -2,15 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::after,
+*::before {
+    @apply text-[16px];
+}
+
+div,
+span,
+p,
+em,
+strong {
+    @apply text-base;
+}
+
 @layer components {
     .btn {
-        @apply flex justify-center items-center gap-[10px] px-10 py-7 rounded-2xl min-w-60;
+        @apply flex justify-center items-center gap-[10px] px-10 py-7 rounded-2xl min-w-[240px] w-max;
 
         span {
             @apply text-btn text-ds-blue;
         }
 
-        btn--primary {
+        div {
+            @apply flex justify-center items-center rounded-full bg-ds-blue w-5 h-5;
+        }
+
+        &.btn--primary {
             @apply bg-ds-blue;
 
             span {
@@ -18,11 +36,11 @@
             }
         }
 
-        btn--secondary {
+        &.btn--secondary {
             @apply bg-ds-yellow;
         }
 
-        btn--primary {
+        &.btn--primary {
             @apply bg-ds-white border border-ds-blue;
         }
     }
