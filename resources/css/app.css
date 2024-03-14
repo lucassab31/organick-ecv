@@ -40,8 +40,8 @@ strong {
             @apply bg-ds-yellow;
         }
 
-        /* &.btn--primary {
+        &.btn--outlined {
             @apply bg-ds-white border border-ds-blue;
-        } */
+        }
     }
 }
