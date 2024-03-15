@@ -1,15 +1,23 @@
+@if(isset($inIframe) && $inIframe)
+    @extends('layouts.component')
+    @section('content')
+@endif
+
 <section class="bg-slate-50 relative flex justify-center w-full p-14">
     <div class="flex items-center max-w-[1495px]">
         <div class="w-1/2">
-            <img src="{{asset('assets/aboutus.png')}}" alt="Image de la section about us" loading="lazy">
+            <picture loading="lazy">
+                <source srcset="{{ (isset($content->about_us->image) ? asset('storage/images/webp/' . pathinfo($content->about_us->image, PATHINFO_FILENAME) . '.webp') : '') }}" type="image/webp">
+                <img src="{{ (isset($content->about_us->image) ? asset('storage/images/original/' . $content->about_us->image) : '') }}" alt="Image de la section about us"/>
+            </picture>
+            {{-- <img src="{{asset('assets/aboutus.png')}}" alt="Image de la section about us" loading="lazy"> --}}
         </div>
         <div class="w-1/2 ">
             <div class="max-w-[700px]">
                 <div>
                     <span class="font-yellowtail text-ds-green text-h4 mb-2">About Us</span>
-                    <h2 class="text-h2 mb-5 text-ds-blue">We Believe in Working <br> Accredited Farmers</h2>
-                    <p>Simply dummy text of the printing and typesetting industry. Lorem had ceased to 
-                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                    <h2 class="text-h2 mb-5 text-ds-blue">{{ isset($content->about_us->title) ? $content->about_us->title : '' }}</h2>
+                    <p>{{ isset($content->about_us->description) ? nl2br($content->about_us->description) : '' }}</p>
                 </div>
                 <div class="mt-10">
                     <div class="flex items-cente gap-5">
@@ -27,8 +35,8 @@
                             </svg>    
                         </div>
                         <div>
-                            <h6 class="text-h6 text-ds-blue">Organic Foods Only</h6>
-                            <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+                            <h6 class="text-h6 text-ds-blue">{{ isset($content->about_us->subtitle_1) ? $content->about_us->subtitle_1 : '' }}</h6>
+                            <p>{{ isset($content->about_us->description_1) ? nl2br($content->about_us->description_1) : '' }}</p>
                         </div>
                     </div>
                     <div class="flex items-center mt-7 gap-5">
@@ -46,13 +54,13 @@
                             </svg>
                         </div>
                         <div>
-                            <h6 class="text-h6 text-ds-blue">Quality Standards</h6>
-                            <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+                            <h6 class="text-h6 text-ds-blue">{{ isset($content->about_us->subtitle_2) ? $content->about_us->subtitle_2 : '' }}</h6>
+                            <p>{{ isset($content->about_us->description_2) ? nl2br($content->about_us->description_2) : '' }}</p>
                         </div>
                     </div>
                 </div>
                 <a href="#" class="btn btn--primary mt-10">
-                    <span>Shop Now</span>
+                    <span>{{ isset($content->about_us->button) ? $content->about_us->button : '' }}</span>
                     <div>
                         <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="m4.476 1.129 3.395 3.064-3.395 3.065M7.4 4.193H.516" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
@@ -63,3 +71,7 @@
         </div>
     </div>  
 </section>
+
+@if(isset($inIframe) && $inIframe)
+    @endsection
+@endif

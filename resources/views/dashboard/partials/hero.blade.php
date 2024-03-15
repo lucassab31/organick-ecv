@@ -32,8 +32,9 @@
             </div>
     
             <div>
-                <x-input-label for="image" value="Image" />
-                <x-file-input id="image" name="image" class="mt-1 block w-full" required autofocus />
+                <canvas id="imageCanvas" style="display: none;"></canvas>
+                <x-input-label for="image_hero" value="Image" />
+                <x-file-input id="image_hero" name="image" class="mt-1 block w-full" accept="image/*" autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>
     
@@ -41,18 +42,62 @@
                 <x-primary-button>Enregistrer</x-primary-button>
                 {{-- save redirected with success --}}
                 @if (session('status'))
-                    <div class="text-green-600">{{ session('status') }}</div>
+                    <div class="text-green-600">{{ session('success') }}</div>
                 @endif
             </div>
         </form>
     </div>
-    <div>
-        <h4>{{ (isset($content->hero->subtitle) ? $content->hero->subtitle : '--') }}</h4>
-        <h1>{{ (isset($content->hero->title) ? $content->hero->title : '--') }}</h1>
-        <p>{{ (isset($content->hero->button) ? $content->hero->button : '--') }}</p>
-        <picture>
-            <source srcset="{{ (isset($content->hero->image) ? asset('storage/images/webp/' . pathinfo($content->hero->image, PATHINFO_FILENAME) . '.webp') : '') }}" type="image/webp">
-            <img src="{{ (isset($content->hero->image) ? asset('storage/images/original/' . $content->hero->image) : '') }}" alt="hero banner" class="w-full h-auto" />
-        </picture>
+    <div class="p-4">
+        <iframe src="{{ route('components.hero') }}" width="100%" height="100%"></iframe>
     </div>
 </section>
+
+<script>
+    document.getElementById('image_hero').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (!file.type.match('image.*')) {
+            alert('Veuillez sélectionner une image.');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(readerEvent) {
+            const image = new Image();
+            image.onload = function(imageEvent) {
+                const canvas = document.getElementById('imageCanvas');
+                const max_size = 1920; // Taille maximale pour la largeur ou la hauteur
+                let width = image.width;
+                let height = image.height;
+
+                if (width > height) {
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
+                }
+
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(image, 0, 0, width, height);
+
+                canvas.toBlob(function(blob) {
+                    const newFile = new File([blob], file.name, {
+                        type: 'image/jpeg',
+                        lastModified: Date.now()
+                    });
+                    const container = new DataTransfer();
+                    container.items.add(newFile);
+                    document.getElementById('image_hero').files = container.files;
+                }, 'image/jpeg', 0.75); // Ajustez la qualité de l'image comme nécessaire
+            }
+            image.src = readerEvent.target.result;
+        }
+        reader.readAsDataURL(file);
+    });
+</script>

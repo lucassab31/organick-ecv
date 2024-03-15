@@ -12,6 +12,11 @@
                     @include('dashboard.partials.hero')
                 </div>
             </div>
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w">
+                    @include('dashboard.partials.about-us')
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
