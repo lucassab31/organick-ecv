@@ -17,10 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
 
+Route::prefix('components')->name('components.')->group(function () {
+    Route::get('/hero', [App\Http\Controllers\PageController::class, 'getHeroComponent'])->name('hero');
+    Route::get('/about-us', [App\Http\Controllers\PageController::class, 'getAboutUsComponent'])->name('aboutus');
+});
+
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [ContentController::class, 'index'])->name('dashboard');
 
-    Route::post('/content/hero', [ContentController::class, 'saveHero'])->name('content.hero.save');
+    Route::prefix('content')->name('content.')->group(function () {
+        Route::post('/hero', [ContentController::class, 'saveHero'])->name('hero.save');
+        Route::post('/about-us', [ContentController::class, 'saveAboutUs'])->name('aboutus.save');
+    });
 });
 
 Route::middleware('auth')->group(function () {

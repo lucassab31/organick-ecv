@@ -8,6 +8,29 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index() {
+        $content = $this->getContent();
+
+        return view('home', compact('content'));
+    }
+
+    public function getHeroComponent() {
+        $oContentPage = $this->getContent();
+
+        $inIframe = true;
+
+        return view('components.hero-banner', ['content' => $oContentPage, 'inIframe' => $inIframe]);
+    }
+
+    public function getAboutUsComponent() {
+        $oContentPage = $this->getContent();
+
+        $inIframe = true;
+
+        return view('components.aboutus', ['content' => $oContentPage, 'inIframe' => $inIframe]);
+    }
+
+
+    private function getContent() {
         $oContent = Content::where('page', 'home')->get();
 
         // make an object oContentPage : section => key => value
@@ -19,6 +42,6 @@ class PageController extends Controller
             $oContentPage->{$content->section}->{$content->key} = $content->value;
         }
 
-        return view('home', ['content']);
+        return $oContentPage;
     }
 }
