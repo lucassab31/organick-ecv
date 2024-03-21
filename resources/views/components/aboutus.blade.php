@@ -1,5 +1,5 @@
 <section class="bg-slate-50 relative flex justify-center w-full p-14">
-    <div class="flex items-center max-w-[1495px]">
+    <article class="flex items-center max-w-[1390px]">
         <div class="w-1/2">
             <img src="{{asset('assets/aboutus.png')}}" alt="Image de la section about us" loading="lazy">
         </div>
@@ -61,5 +61,5 @@
                 </a>
             </div>
         </div>
-    </div>  
+    </article>  
 </section>
