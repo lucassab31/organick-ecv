@@ -2,7 +2,7 @@
     @extends('layouts.component')
     @section('content')
     @endif
-    <section class="relative flex justify-center w-full">
+    <section class="container px-5 mx-auto relative flex justify-center w-full">
         <div class="w-1/2 h-[930px]">
             <img src="{{ asset('assets/eco-friendly.jpg') }}" alt="Eco Friendly" class="object-cover object-center">
         </div>
