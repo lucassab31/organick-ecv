@@ -4,12 +4,12 @@
 @endif
 
     <div class="relative flex w-full">
-        <picture class="aspect-[960/449]" loading="lazy">
+        <picture class="aspect-[960/449]">
             <source
                 srcset="{{ isset($content->hero->image) ? asset('storage/images/webp/' . pathinfo($content->hero->image, PATHINFO_FILENAME) . '.webp') : '' }}"
-                type="image/webp">
+                type="image/webp" loading="lazy">
             <img src="{{ isset($content->hero->image) ? asset('storage/images/original/' . $content->hero->image) : '' }}"
-                alt="Hero banner" />
+                alt="Hero banner" loading="lazy" />
         </picture>
         <div class="absolute top-0 left-0 w-full h-full flex items-center container mx-auto p-5 lg:p-10">
             <div class="max-w-[530px] translate-x-1/2">
