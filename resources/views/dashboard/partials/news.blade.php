@@ -2,47 +2,61 @@
     <div>
         <header>
             <h2 class="text-lg font-medium text-gray-900">
-                Section Offer banner
+                Section News banner
             </h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                Vous pouvez modifier les information de la section offer banner ici.
+                Vous pouvez modifier les information de la section news ici.
             </p>
         </header>
 
-        <form method="post" action="{{ route('admin.content.offer.save') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
+        <form method="post" action="{{ route('admin.content.news.save') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
             @csrf
 
             <div>
-                <x-input-label for="title_1" value="Titre" />
-                <x-text-input id="title_1" name="title_1" type="text" class="mt-1 block w-full" :value="old('title_1', (isset($content->offer_banner->title_1) ? $content->offer_banner->title_1 : ''))" required autofocus />
+                <x-input-label for="author_1" value="Auteur news N°1" />
+                <x-text-input id="author_1" name="author_1" type="text" class="mt-1 block w-full" :value="old('author_1', (isset($content->news->author_1) ? $content->news->author_1 : ''))" required autofocus />
+                <x-input-error class="mt-2" :messages="$errors->get('author_1')" />
+            </div>
+            <div>
+                <x-input-label for="title_1" value="Titre news N°1" />
+                <x-text-input id="title_1" name="title_1" type="text" class="mt-1 block w-full" :value="old('title_1', (isset($content->news->title_1) ? $content->news->title_1 : ''))" required autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('title_1')" />
             </div>
             <div>
-                <x-input-label for="subtitle_1" value="Sous-Titre" />
-                <x-text-input id="subtitle_1" name="subtitle_1" type="text" class="mt-1 block w-full" :value="old('subtitle_1', (isset($content->offer_banner->subtitle_1) ? $content->offer_banner->subtitle_1 : ''))" required autofocus />
-                <x-input-error class="mt-2" :messages="$errors->get('subtitle_1')" />
+                <x-input-label for="description_1" value="Description news N°1" />
+                <x-textarea-input id="description_1" name="description_1" class="mt-1 block w-full" required autofocus>
+                    {{ old('description_1', (isset($content->news->description_1) ? $content->news->description_1 : '')) }}
+                </x-textarea-input>
+                <x-input-error class="mt-2" :messages="$errors->get('description_1')" />
             </div>
             <div>
                 <canvas id="imageCanvas_1" style="display: none;"></canvas>
-                <x-input-label for="image_1" value="Image" />
+                <x-input-label for="image_1" value="Image news N°1" />
                 <x-file-input id="image_1" name="image_1" class="mt-1 block w-full" accept="image/*" autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>
             <hr />
             <div>
-                <x-input-label for="title_2" value="Titre" />
-                <x-text-input id="title_2" name="title_2" type="text" class="mt-1 block w-full" :value="old('title_2', (isset($content->offer_banner->title_2) ? $content->offer_banner->title_2 : ''))" required autofocus />
+                <x-input-label for="author_2" value="Auteur news N°2" />
+                <x-text-input id="author_2" name="author_2" type="text" class="mt-1 block w-full" :value="old('author_2', (isset($content->news->author_2) ? $content->news->author_2 : ''))" required autofocus />
+                <x-input-error class="mt-2" :messages="$errors->get('author_2')" />
+            </div>
+            <div>
+                <x-input-label for="title_2" value="Titre news N°2" />
+                <x-text-input id="title_2" name="title_2" type="text" class="mt-1 block w-full" :value="old('title_2', (isset($content->news->title_2) ? $content->news->title_2 : ''))" required autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('title_2')" />
             </div>
             <div>
-                <x-input-label for="subtitle_2" value="Sous-Titre" />
-                <x-text-input id="subtitle_2" name="subtitle_2" type="text" class="mt-1 block w-full" :value="old('subtitle_2', (isset($content->offer_banner->subtitle_2) ? $content->offer_banner->subtitle_2 : ''))" required autofocus />
-                <x-input-error class="mt-2" :messages="$errors->get('subtitle_2')" />
+                <x-input-label for="description_2" value="Description news N°2" />
+                <x-textarea-input id="description_2" name="description_2" class="mt-1 block w-full" required autofocus>
+                    {{ old('description_2', (isset($content->news->description_2) ? $content->news->description_2 : '')) }}
+                </x-textarea-input>
+                <x-input-error class="mt-2" :messages="$errors->get('description_2')" />
             </div>
             <div>
                 <canvas id="imageCanvas_2" style="display: none;"></canvas>
-                <x-input-label for="image_2" value="Image" />
+                <x-input-label for="image_2" value="Image news N°2" />
                 <x-file-input id="image_2" name="image_2" class="mt-1 block w-full" accept="image/*" autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>

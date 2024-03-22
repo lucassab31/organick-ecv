@@ -30,6 +30,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
         Route::post('/about-us', [ContentController::class, 'saveAboutUs'])->name('aboutus.save');
         Route::post('/offer', [ContentController::class, 'saveOfferBanner'])->name('offer.save');
         Route::post('/eco-friendly', [ContentController::class, 'saveEcoFriendly'])->name('eco-friendly.save');
+        Route::post('/news', [ContentController::class, 'saveNews'])->name('news.save');
     });
 });
 
