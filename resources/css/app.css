@@ -16,12 +16,28 @@ strong {
     @apply text-base;
 }
 
+@screen lg {
+    footer .footer-layout {
+        @apply grid grid-cols-[2fr_3fr_2fr];
+        grid-template-areas: "contact brand utilities";
+        .footer-layout--contact {
+            grid-area: contact;
+        }
+        .footer-layout--brand {
+            grid-area: brand;
+        }
+        .footer-layout--utilities {
+            grid-area: utilities;
+        }
+    }
+}
+
 @layer components {
     .btn {
-        @apply flex justify-center items-center gap-[10px] px-10 py-7 rounded-2xl min-w-[240px] w-max;
+        @apply flex justify-center items-center gap-[10px] px-5 lg:px-10 py-4 lg:py-7 rounded-2xl min-w-[160px] lg:min-w-[240px] w-max;
 
         span {
-            @apply text-btn text-ds-blue;
+            @apply text-base font-bold lg:text-btn text-ds-blue;
         }
 
         div {

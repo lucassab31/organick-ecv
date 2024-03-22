@@ -4,5 +4,6 @@
         <x-aboutus />
         <x-news />
         <x-shop />
+        <x-footer />
     </x-slot>
 </x-guest-layout>
