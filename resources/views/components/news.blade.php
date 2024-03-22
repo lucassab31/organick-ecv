@@ -23,9 +23,10 @@
                 <div class="relative">
                     <picture class="aspect-[960/449]" loading="lazy">
                         <source
+                            class="rounded-3xl"
                             srcset="{{ isset($content->news->image_1) ? asset('storage/images/webp/' . pathinfo($content->news->image_1, PATHINFO_FILENAME) . '.webp') : '' }}"
                             type="image/webp" loading="lazy">
-                        <img src="{{ isset($content->news->image_1) ? asset('storage/images/original/' . $content->news->image_1) : '' }}"
+                        <img class="rounded-3xl" src="{{ isset($content->news->image_1) ? asset('storage/images/original/' . $content->news->image_1) : '' }}"
                             alt="New n°2 image" loading="lazy"/>
                     </picture>
                     <p
@@ -64,9 +65,10 @@
                 <div class="relative">
                     <picture class="aspect-[960/449]" loading="lazy">
                         <source
+                            class="rounded-3xl"
                             srcset="{{ isset($content->news->image_2) ? asset('storage/images/webp/' . pathinfo($content->news->image_2, PATHINFO_FILENAME) . '.webp') : '' }}"
                             type="image/webp" loading="lazy">
-                        <img src="{{ isset($content->news->image_2) ? asset('storage/images/original/' . $content->news->image_2) : '' }}"
+                        <img class="rounded-3xl" src="{{ isset($content->news->image_2) ? asset('storage/images/original/' . $content->news->image_2) : '' }}"
                             alt="New n°2 image" loading="lazy"/>
                     </picture>
                     <p
