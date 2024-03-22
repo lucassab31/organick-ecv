@@ -28,6 +28,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::prefix('content')->name('content.')->group(function () {
         Route::post('/hero', [ContentController::class, 'saveHero'])->name('hero.save');
         Route::post('/about-us', [ContentController::class, 'saveAboutUs'])->name('aboutus.save');
+        Route::post('/offer', [ContentController::class, 'saveOfferBanner'])->name('offer.save');
+        Route::post('/eco-friendly', [ContentController::class, 'saveEcoFriendly'])->name('eco-friendly.save');
     });
 });
 

@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-slot name="slot">
        <x-hero-banner :content="$content" />
-       <x-aboutus />
+       <x-aboutus :content="$content" />
        <x-news />
-    </x-slot> 
+    </x-slot>
 </x-guest-layout>
