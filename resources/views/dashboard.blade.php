@@ -17,6 +17,21 @@
                     @include('dashboard.partials.about-us')
                 </div>
             </div>
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w">
+                    @include('dashboard.partials.offer-banner')
+                </div>
+            </div>
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w">
+                    @include('dashboard.partials.eco-friendly')
+                </div>
+            </div>
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w">
+                    @include('dashboard.partials.news')
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
