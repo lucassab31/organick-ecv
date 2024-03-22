@@ -14,8 +14,8 @@
                         alt="Hero banner" />
                 </picture>
                 <div class="absolute top-1/2 -translate-y-1/2 left-10">
-                    <p class="font-yellowtail text-ds-green text-h4 mb-2">Titre de l'image 1</p>
-                    <p class="text-lg text-white text-h3">Sous-titre de l'image 1</p>
+                    <p class="font-yellowtail text-ds-green text-h4 mb-2">{{ isset($content->offer_banner->title_1) ? $content->offer_banner->title_1 : '' }}</p>
+                    <p class="text-lg text-white text-h3">{{ isset($content->offer_banner->subtitle_2) ? $content->offer_banner->subtitle_2 : '' }}</p>
                 </div>
             </div>
             <div class="relative">
@@ -27,8 +27,8 @@
                         alt="Hero banner" />
                 </picture>
                 <div class="absolute top-1/2 -translate-y-1/2 left-10">
-                    <p class="font-yellowtail text-ds-green text-h4 mb-2">Titre de l'image 2</p>
-                    <p class="text-lg text-ds-blue text-h3">Sous-titre de l'image 2</p>
+                    <p class="font-yellowtail text-ds-green text-h4 mb-2">{{ isset($content->offer_banner->title_2) ? $content->offer_banner->title_2 : '' }}</p>
+                    <p class="text-lg text-ds-blue text-h3">{{ isset($content->offer_banner->subtitle_2) ? $content->offer_banner->subtitle_2 : '' }}</p>
                 </div>
             </div>
         </article>
