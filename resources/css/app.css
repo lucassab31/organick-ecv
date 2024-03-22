@@ -5,7 +5,7 @@
 *,
 *::after,
 *::before {
-    @apply text-[16px];
+    @apply text-[16px] text-ds-blue;
 }
 
 div,
