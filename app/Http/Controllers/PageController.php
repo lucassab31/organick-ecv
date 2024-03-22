@@ -29,6 +29,29 @@ class PageController extends Controller
         return view('components.aboutus', ['content' => $oContentPage, 'inIframe' => $inIframe]);
     }
 
+    public function getOfferBannerComponent() {
+        $oContentPage = $this->getContent();
+
+        $inIframe = true;
+
+        return view('components.offer-banner', ['content' => $oContentPage, 'inIframe' => $inIframe]);
+    }
+
+    public function getEcoFriendlyComponent() {
+        $oContentPage = $this->getContent();
+
+        $inIframe = true;
+
+        return view('components.eco-friendly', ['content' => $oContentPage, 'inIframe' => $inIframe]);
+    }
+
+    public function getNewsComponent() {
+        $oContentPage = $this->getContent();
+
+        $inIframe = true;
+
+        return view('components.news', ['content' => $oContentPage, 'inIframe' => $inIframe]);
+    }
 
     private function getContent() {
         $oContent = Content::where('page', 'home')->get();

@@ -1,7 +1,7 @@
 @if (isset($inIframe) && $inIframe)
     @extends('layouts.component')
     @section('content')
-    @endif
+@endif
 
     <div class="relative flex w-full">
         <picture class="aspect-[960/449]" loading="lazy">
@@ -30,6 +30,6 @@
         </div>
     </div>
 
-    @if (isset($inIframe) && $inIframe)
+@if (isset($inIframe) && $inIframe)
     @endsection
 @endif

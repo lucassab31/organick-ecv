@@ -20,6 +20,9 @@ Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('ho
 Route::prefix('components')->name('components.')->group(function () {
     Route::get('/hero', [App\Http\Controllers\PageController::class, 'getHeroComponent'])->name('hero');
     Route::get('/about-us', [App\Http\Controllers\PageController::class, 'getAboutUsComponent'])->name('aboutus');
+    Route::get('/offer', [App\Http\Controllers\PageController::class, 'getOfferBannerComponent'])->name('offer');
+    Route::get('/eco-friendly', [App\Http\Controllers\PageController::class, 'getEcoFriendlyComponent'])->name('eco-friendly');
+    Route::get('/news', [App\Http\Controllers\PageController::class, 'getNewsComponent'])->name('news');
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {

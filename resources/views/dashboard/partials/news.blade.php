@@ -71,7 +71,7 @@
         </form>
     </div>
     <div class="p-4">
-        <iframe src="{{ route('components.hero') }}" width="100%" height="100%"></iframe>
+        <iframe src="{{ route('components.news') }}" width="100%" height="100%"></iframe>
     </div>
 </section>
 

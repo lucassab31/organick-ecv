@@ -80,7 +80,7 @@
         </form>
     </div>
     <div class="p-4">
-        <iframe src="{{ route('components.hero') }}" width="100%" height="100%"></iframe>
+        <iframe src="{{ route('components.eco-friendly') }}" width="100%" height="100%"></iframe>
     </div>
 </section>
 
