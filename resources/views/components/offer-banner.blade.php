@@ -8,9 +8,9 @@
             <div class="relative">
                 <picture class="aspect-[960/449]" loading="lazy">
                     <source
-                        srcset="{{ isset($content->offer_banner->image) ? asset('storage/images/webp/' . pathinfo($content->offer_banner->image, PATHINFO_FILENAME) . '.webp') : '' }}"
+                        srcset="{{ isset($content->offer_banner->image_1) ? asset('storage/images/webp/' . pathinfo($content->offer_banner->image_1, PATHINFO_FILENAME) . '.webp') : '' }}"
                         type="image/webp">
-                    <img src="{{ isset($content->offer_banner->image) ? asset('storage/images/original/' . $content->offer_banner->image) : '' }}"
+                    <img src="{{ isset($content->offer_banner->image81) ? asset('storage/images/original/' . $content->offer_banner->image_1) : '' }}"
                         alt="Hero banner" />
                 </picture>
                 <div class="absolute top-1/2 -translate-y-1/2 left-10">
@@ -21,9 +21,9 @@
             <div class="relative">
                 <picture class="aspect-[960/449]" loading="lazy">
                     <source
-                        srcset="{{ isset($content->offer_banner->image) ? asset('storage/images/webp/' . pathinfo($content->offer_banner->image, PATHINFO_FILENAME) . '.webp') : '' }}"
+                        srcset="{{ isset($content->offer_banner->image_2) ? asset('storage/images/webp/' . pathinfo($content->offer_banner->image_2, PATHINFO_FILENAME) . '.webp') : '' }}"
                         type="image/webp">
-                    <img src="{{ isset($content->offer_banner->image) ? asset('storage/images/original/' . $content->offer_banner->image) : '' }}"
+                    <img src="{{ isset($content->offer_banner->image_2) ? asset('storage/images/original/' . $content->offer_banner->image_2) : '' }}"
                         alt="Hero banner" />
                 </picture>
                 <div class="absolute top-1/2 -translate-y-1/2 left-10">
