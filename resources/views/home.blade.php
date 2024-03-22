@@ -2,9 +2,10 @@
     <x-slot name="slot">
         <x-hero-banner :content="$content" />
         <x-aboutus :content="$content" />
-        <x-news />
+        <x-offer-banner />
         <x-aboutus />
         <x-news />
         <x-shop />
+        <x-eco-friendly />
     </x-slot>
 </x-guest-layout>
