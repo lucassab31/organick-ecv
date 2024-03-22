@@ -2,7 +2,7 @@
     @extends('layouts.component')
     @section('content')
     @endif
-    <section class="container px-5 py-14 w-full flex justify-center">
+    <section class="container mx-auto px-5 py-14 w-full flex justify-center">
         <article class="flex flex-col items-center max-w-[1380px]">
             <div class="flex items-end justify-between w-full mb-5">
                 <div>

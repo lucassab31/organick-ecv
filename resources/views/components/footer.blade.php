@@ -1,4 +1,4 @@
-<footer class="container px-5 lg:max-w-[1400px]">
+<footer class="container mx-auto px-5 lg:max-w-[1400px]">
     <form class="flex flex-col lg:flex-row gap-5 lg:items-center lg:justify-between rounded-3xl p-10 lg:px-20 lg:py-28"
         style="background: center / cover url('{{ asset('assets/nl.png') }}')">
         <h2 class="text-h5 lg:text-h2 text-white">Subscribe to our Newsletter</h2>
