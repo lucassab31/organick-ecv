@@ -6,5 +6,6 @@
         <x-aboutus />
         <x-news />
         <x-shop />
+        <x-eco-friendly />
     </x-slot>
 </x-guest-layout>
