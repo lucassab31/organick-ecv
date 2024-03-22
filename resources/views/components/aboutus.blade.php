@@ -3,7 +3,7 @@
     @section('content')
     @endif
 
-    <section class="container mx-auto px-5 bg-slate-50 relative flex justify-center w-full p-14">
+    <section class="bg-slate-50 relative flex justify-center w-full p-14">
         <article class="flex items-center max-w-[1390px]">
             <div class="w-1/2">
                 <picture loading="lazy">
