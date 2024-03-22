@@ -97,13 +97,13 @@
 
                 canvas.toBlob(function(blob) {
                     const newFile = new File([blob], file.name, {
-                        type: 'image/jpeg',
+                        type: 'image/png',
                         lastModified: Date.now()
                     });
                     const container = new DataTransfer();
                     container.items.add(newFile);
                     document.getElementById('image_1').files = container.files;
-                }, 'image/jpeg', 0.75); // Ajustez la qualité de l'image comme nécessaire
+                }, 'image/png', 0.75); // Ajustez la qualité de l'image comme nécessaire
             }
             image.src = readerEvent.target.result;
         }
@@ -145,13 +145,13 @@
 
                 canvas.toBlob(function(blob) {
                     const newFile = new File([blob], file.name, {
-                        type: 'image/jpeg',
+                        type: 'image/png',
                         lastModified: Date.now()
                     });
                     const container = new DataTransfer();
                     container.items.add(newFile);
                     document.getElementById('image_2').files = container.files;
-                }, 'image/jpeg', 0.75); // Ajustez la qualité de l'image comme nécessaire
+                }, 'image/png', 0.75); // Ajustez la qualité de l'image comme nécessaire
             }
             image.src = readerEvent.target.result;
         }

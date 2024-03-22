@@ -4,40 +4,40 @@
             <h2 class="text-lg font-medium text-gray-900">
                 Section Hero banner
             </h2>
-    
+
             <p class="mt-1 text-sm text-gray-600">
                 Vous pouvez modifier les information de la section hero banner ici.
             </p>
         </header>
-    
+
         <form method="post" action="{{ route('admin.content.hero.save') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
             @csrf
-    
+
             <div>
                 <x-input-label for="subtitle" value="Sous-Titre" />
                 <x-text-input id="subtitle" name="subtitle" type="text" class="mt-1 block w-full" :value="old('subtitle', (isset($content->hero->subtitle) ? $content->hero->subtitle : ''))" required autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('subtitle')" />
             </div>
-    
+
             <div>
                 <x-input-label for="title" value="Titre" />
                 <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="old('title', (isset($content->hero->title) ? $content->hero->title : ''))" required autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('title')" />
             </div>
-    
+
             <div>
                 <x-input-label for="button" value="Boutton" />
                 <x-text-input id="button" name="button" type="text" class="mt-1 block w-full" :value="old('button', (isset($content->hero->button) ? $content->hero->button : ''))" required autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('button')" />
             </div>
-    
+
             <div>
                 <canvas id="imageCanvas" style="display: none;"></canvas>
                 <x-input-label for="image_hero" value="Image" />
                 <x-file-input id="image_hero" name="image" class="mt-1 block w-full" accept="image/*" autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>
-    
+
             <div class="flex items-center gap-4">
                 <x-primary-button>Enregistrer</x-primary-button>
                 {{-- save redirected with success --}}
@@ -88,13 +88,13 @@
 
                 canvas.toBlob(function(blob) {
                     const newFile = new File([blob], file.name, {
-                        type: 'image/jpeg',
+                        type: 'image/png',
                         lastModified: Date.now()
                     });
                     const container = new DataTransfer();
                     container.items.add(newFile);
                     document.getElementById('image_hero').files = container.files;
-                }, 'image/jpeg', 0.75); // Ajustez la qualité de l'image comme nécessaire
+                }, 'image/png', 0.75); // Ajustez la qualité de l'image comme nécessaire
             }
             image.src = readerEvent.target.result;
         }
