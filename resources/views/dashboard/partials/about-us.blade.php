@@ -4,12 +4,12 @@
             <h2 class="text-lg font-medium text-gray-900">
                 Section About Us
             </h2>
-    
+
             <p class="mt-1 text-sm text-gray-600">
                 Vous pouvez modifier les information de la section About Us ici.
             </p>
         </header>
-    
+
         <form method="post" action="{{ route('admin.content.aboutus.save') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
             @csrf
             <div>
@@ -17,13 +17,14 @@
                 <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="old('title', (isset($content->about_us->title) ? $content->about_us->title : ''))" required autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('title')" />
             </div>
-
             <div>
                 <x-input-label for="description" value="Description" />
-                <x-textarea-input id="description" name="description" class="mt-1 block w-full" :value="old('description', (isset($content->about_us->description) ? $content->about_us->description : ''))" required autofocus />
+                <x-textarea-input id="description" name="description" class="mt-1 block w-full" required autofocus>
+                    {{ old('description', (isset($content->about_us->description) ? $content->about_us->description : '')) }}
+                </x-textarea-input>
                 <x-input-error class="mt-2" :messages="$errors->get('description')" />
             </div>
-
+            <hr />
             <div>
                 <x-input-label for="subtitle_1" value="Titre sous-section 1" />
                 <x-text-input id="subtitle_1" name="subtitle_1" type="text" class="mt-1 block w-full" :value="old('subtitle_1', (isset($content->about_us->subtitle_1) ? $content->about_us->subtitle_1 : ''))" required autofocus />
@@ -31,10 +32,12 @@
             </div>
             <div>
                 <x-input-label for="description_1" value="Description sous-section 1" />
-                <x-textarea-input id="description_1" name="description_1" class="mt-1 block w-full" :value="old('description_1', (isset($content->about_us->description_1) ? $content->about_us->description_1 : ''))" required autofocus />
+                <x-textarea-input id="description_1" name="description_1" class="mt-1 block w-full" required autofocus>
+                    {{ old('description_1', (isset($content->about_us->description_1) ? $content->about_us->description_1 : '')) }}
+                </x-textarea-input>
                 <x-input-error class="mt-2" :messages="$errors->get('description_1')" />
             </div>
-
+            <hr />
             <div>
                 <x-input-label for="subtitle_2" value="Titre sous-section 2" />
                 <x-text-input id="subtitle_2" name="subtitle_2" type="text" class="mt-1 block w-full" :value="old('subtitle_2', (isset($content->about_us->subtitle_2) ? $content->about_us->subtitle_2 : ''))" required autofocus />
@@ -42,23 +45,24 @@
             </div>
             <div>
                 <x-input-label for="description_2" value="Description sous-section 2" />
-                <x-textarea-input id="description_2" name="description_2" class="mt-1 block w-full" :value="old('description_2', (isset($content->about_us->description_2) ? $content->about_us->description_2 : ''))" required autofocus />
+                <x-textarea-input id="description_2" name="description_2" class="mt-1 block w-full" required autofocus>
+                    {{ old('description_2', (isset($content->about_us->description_2) ? $content->about_us->description_2 : '')) }}
+                </x-textarea-input>
                 <x-input-error class="mt-2" :messages="$errors->get('description_2')" />
             </div>
-    
+            <hr />
             <div>
                 <x-input-label for="button" value="Boutton" />
                 <x-text-input id="button" name="button" type="text" class="mt-1 block w-full" :value="old('button', (isset($content->about_us->button) ? $content->about_us->button : ''))" required autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('button')" />
             </div>
-    
             <div>
                 <canvas id="imageCanvas" style="display: none;"></canvas>
                 <x-input-label for="image_about_us" value="Image" />
                 <x-file-input id="image_about_us" name="image" class="mt-1 block w-full" accept="image/*" autofocus />
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>
-    
+
             <div class="flex items-center gap-4">
                 <x-primary-button>Enregistrer</x-primary-button>
                 {{-- save redirected with success --}}

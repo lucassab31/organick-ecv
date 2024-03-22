@@ -11,7 +11,6 @@
             <img src="{{ isset($content->hero->image) ? asset('storage/images/original/' . $content->hero->image) : '' }}"
                 alt="Hero banner" />
         </picture>
-        {{-- <img class="aspect-[960/449]" src="{{ asset("assets/banner.png") }}" alt="Hero banner" loading="lazy"> --}}
         <div class="absolute top-0 left-0 w-full h-full flex items-center container mx-auto p-5 lg:p-10">
             <div class="max-w-[530px] translate-x-1/2">
                 <span

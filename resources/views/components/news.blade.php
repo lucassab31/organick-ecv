@@ -2,7 +2,7 @@
     <article class="flex flex-col items-center max-w-[1380px]">
         <div class="flex items-end justify-between w-full mb-5">
             <div>
-                <span class="font-yellowtail text-ds-green text-h4 mb-2">About Us</span>
+                <span class="font-yellowtail text-ds-green text-h4 mb-2">News</span>
                 <h2 class="text-h2  text-ds-blue">We Believe in Working <br> Accredited Farmers</h2>
             </div>
             <a href="#" class="btn btn--outlined">
@@ -16,7 +16,7 @@
         </div>
         <div class="flex items-center gap-5 mt-5">
             <div class="relative">
-                <img class="rounded-3xl" src="{{asset('assets/salad.png')}}" alt="#">
+                <img class="rounded-3xl" src="{{asset('assets/salad.png')}}" alt="#" loading="lazy">
                 <p class="absolute rounded-full bg-ds-white top-3 left-3 w-20 h-20 flex items-center justify-center text-center text-h6 font-extrabold flex-col">
                     25
                     <span class="text-quotes">Nov</span>
