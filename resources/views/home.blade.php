@@ -6,5 +6,6 @@
         <x-news :content="$content" />
         <x-shop />
         <x-eco-friendly :content="$content" />
+        <x-footer />
     </x-slot>
 </x-guest-layout>

@@ -1,18 +1,18 @@
 <section class="text-center container mx-auto px-5 py-28 !max-w-[1400px]">
     <span class="text-h4 font-yellowtail text-ds-green mb-2">Categories</span>
     <h2 class="text-h2 mb-10">Our Products</h2>
-    <div class="grid grid-cols-4 gap-5 mb-28">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16 lg:mb-28">
         @for ($i = 0; $i < 8; $i++)
-            <div class="flex flex-col gap-2 justify-start text-left p-8 bg-ds-white rounded-2xl">
-                <span class="w-max text-ds-white bg-ds-blue rounded-lg p-1">Vegetable</span>
+            <div class="flex flex-col gap-2 justify-start text-left p-4 lg:p-8 bg-ds-white rounded-2xl">
+                <span class="w-max text-ds-white bg-ds-blue rounded-lg p-1 text-xs lg:text-base">Vegetable</span>
                 <img src="{{ asset('assets/broccoli.png') }}" alt="Broccoli">
                 <div class="flex flex-col gap-2">
-                    <span class="mb-1 text-btn">Calabrese Broccoli</span>
+                    <span class="mb-1 text-sm font-bold lg:text-btn">Calabrese Broccoli</span>
                     <hr class="bg-ds-grey text-ds-grey">
-                    <div class="flex justify-between">
+                    <div class="flex flex-wrap justify-between">
                         <div class="flex gap-2">
-                            <del class="opacity-60">$20.00</del>
-                            <span class="text-btn">$13.00</span>
+                            <del class="text-xs lg:text-base opacity-60">$20.00</del>
+                            <span class="text-sm font-bold lg:text-btn">$13.00</span>
                         </div>
                         <div class="flex gap-[2px]">
                             @for ($j = 0; $j < 5; $j++)
