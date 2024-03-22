@@ -1,7 +1,7 @@
 @if (isset($inIframe) && $inIframe)
     @extends('layouts.component')
     @section('content')
-@endif
+    @endif
 
     <section class="relative flex justify-center w-full p-14">
         <article class="flex items-center max-w-[1390px] gap-9">
@@ -34,6 +34,6 @@
         </article>
     </section>      
 
-@if (isset($inIframe) && $inIframe)
+    @if (isset($inIframe) && $inIframe)
     @endsection
 @endif
